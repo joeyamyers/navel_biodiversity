@@ -26,7 +26,7 @@ init();
 function optionChanged(newSample) {
   // Fetch new data each time a new sample is selected
   buildMetadata(newSample);
-  buildCharts(newSample);
+  // buildCharts(newSample);
   
 }
 
@@ -58,20 +58,21 @@ function buildCharts(sample) {
   // 2. Use d3.json to load and retrieve the samples.json file 
   d3.json("samples.json").then((data) => {
     // 3. Create a variable that holds the samples array. 
-
+    var samples = data.samples;
     // 4. Create a variable that filters the samples for the object with the desired sample number.
-
+    var filteredSample = samples.filter((number) => number.id === sample);
     //  5. Create a variable that holds the first sample in the array.
-
+    var sampleResult = filteredSample[0];
 
     // 6. Create variables that hold the otu_ids, otu_labels, and sample_values.
-
+    var otuIdsResult = sampleResult.otu_ids
+    var otuLabelsResult = sampleResult.otu_labels
+    var sampleValuesResult = sampleResult.sample_values
 
     // 7. Create the yticks for the bar chart.
-    // Hint: Get the the top 10 otu_ids and map them in descending order  
-    //  so the otu_ids with the most bacteria are last. 
+    // Hint: Get the the top 10 otu_ids and map them in descending order so the otu_ids with the most bacteria are last. 
 
-    var yticks = 
+    var yticks = otuIdsResult.map((id) => id ).reverse().slice(0, 10);
 
     // 8. Create the trace for the bar chart. 
     var barData = [
@@ -82,19 +83,6 @@ function buildCharts(sample) {
      
     };
     // 10. Use Plotly to plot the data with the layout. 
-    Plotly.newPlot();
-        
-    // 1. Create the trace for the bubble chart.
-    var bubbleData = [
-   
-        ];
-    
-    // 2. Create the layout for the bubble chart.
-    var bubbleLayout = {
-          
-        };
-    
-    // 3. Use Plotly to plot the data with the layout.
-    Plotly.newPlot(); 
+  
   });
 }
