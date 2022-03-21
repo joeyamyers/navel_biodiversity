@@ -5,16 +5,33 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Navel Biodiversity</title>
+
+    <!-- bootstrap link -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- css link -->
+    <link rel="stylesheet" href="./static/css/style.css">
+
 </head>
 <body>
     <div class="container">
+
+      <!-- nav bar -->
+      <nav class="navbar navbar-dark bg-dark navbar-expand-lg">
+        <a class="navbar-brand" href="https://github.com/joeyamyers/navel_biodiversity">Link to Github Repository</a>
+    </nav>
+
+      <!-- jumbotron -->
         <div class="row">
           <div class="col-md-12 jumbotron text-center">
             <h1>Belly Button Biodiversity Dashboard</h1>
             <p>Use the interactive charts below to explore the dataset</p>
+            <!-- Adding more information about thhe project-->
+            <p>Adding more info on the project</p>
           </div>
         </div>
+
+        <!-- dropdown menu and metadata -->
         <div class="row">
           <div class="col-md-2">
             <div class="well">
@@ -29,22 +46,29 @@
               <div id="sample-metadata" class="panel-body"></div>
             </div>
           </div>
+
+          <!-- bar chart -->
           <div class="col-md-5">
             <div id="hbar"></div>
           </div>
 
+          <!-- gauge chart -->
           <div class="col-md-5">
             <div id="gauge"></div>
           </div>
         </div>
+
+        <!-- bubble chart -->
         <div class="row">
           <div class="col-md-12">
             <div id="bubble"></div>
           </div>
         </div>
     </div>
+    
+    <!-- link to js: d3, plotly, and charts.js  -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-    <script src="charts.js"></script>
+    <script src="./static/js/charts.js"></script>
 </body>
 </html>
