@@ -22,7 +22,7 @@ This bar chart displays the count of each bacteria found in each sample's navel.
 This gauge chart visualizes how many times a volunteer washed their navel per week.
 ### Bacteria Count per Sample
 
-![](analysis/BubbleChart.png) <br> 
+![](analysis/bubbleChart.png) <br> 
 This bubble chart also shows the count of each bacteria found in each sample's navel.
 
 
